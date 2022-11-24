@@ -1,0 +1,55 @@
+<div fxLayout="row" fxLayoutAlign="end stretch" class="padding10">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" class="pointer" mat-dialog-close>
+        highlight_off
+    </mat-icon>
+</div>
+<div fxLayout="column" fxLayoutAlign="center center">
+    <h3 class="bold">{{header}}</h3>
+</div>
+<div fxLayout="row" fxLayoutAlign="start stretch" class="padding20">
+    <form [formGroup]="todoForm" class="full-width">
+        <mat-form-field class="example-full-width full-width">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Enter Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width full-width">
+            <mat-label>Todo</mat-label>
+            <input matInput placeholder="Enter Todo" formControlName="task">
+        </mat-form-field>
+        <mat-form-field class="example-full-width full-width">
+            <mat-label>Select Task Status</mat-label>
+            <mat-select formControlName="status" matInput>
+                <mat-option *ngFor="let option of status" [value]="option">{{option}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [mat-dialog-close]="todoForm.value">{{btnString}}</button>
+    </form>
+</div>
+
+<!-- <div fxLayout="row" fxLayoutAlign="end stretch" class="padding10" *ngIf="header.includes('Edit')">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" class="pointer" mat-dialog-close>
+        add_circle_outline
+    </mat-icon>
+</div>
+<div fxLayout="column" fxLayoutAlign="center center" *ngIf="header.includes('Edit')">
+    <h3 class="bold">{{header}}</h3>
+</div>
+<div fxLayout="row" fxLayoutAlign="start stretch" class="padding20" *ngIf="header.includes('Edit')">
+    <form [formGroup]="todoEditForm" class="full-width">
+        <mat-form-field class="example-full-width full-width">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Enter Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width full-width">
+            <mat-label>Todo</mat-label>
+            <input matInput placeholder="Enter Todo" formControlName="task">
+        </mat-form-field>
+        <mat-form-field class="example-full-width full-width">
+            <mat-label>Select Task Status</mat-label>
+            <mat-select formControlName="status" matInput>
+                <mat-option *ngFor="let option of status" [value]="option">{{option}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [mat-dialog-close]="todoForm.value">{{btnString}}</button>
+    </form>
+</div> -->
